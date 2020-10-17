@@ -1,10 +1,12 @@
 # Project 3 - PetPortal 
 
+## Part 1
+
 PetPortal is a photo sharing app similar to Instagram but using Parse as its backend.
 
 Time spent: **0** hours spent in total
 
-## User Stories
+### User Stories
 
 The following **required** functionality is completed:
 
@@ -23,7 +25,7 @@ The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
 
-## TODO: Video Walkthrough
+### TODO: Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
@@ -31,16 +33,16 @@ Here's a walkthrough of implemented user stories:
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-## Notes
+### Notes
 
 - Describe any challenges encountered while building the app.
 
-## Open-source libraries used
+### Open-source libraries used
 
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
 - [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Android
 
-## License
+### License
 
     Copyright [2020] [Nicole Miller]
 

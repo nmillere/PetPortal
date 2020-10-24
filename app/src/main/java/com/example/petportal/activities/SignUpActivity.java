@@ -11,40 +11,24 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.petportal.R;
-import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
-public class LoginActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
-    public static final String TAG = "LoginActivity";
+    public static final String TAG = "SignUpActivity";
     private EditText etUsername;
     private EditText etPassword;
-    private Button btnLogin;
     private Button btnSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        if (ParseUser.getCurrentUser() != null) {
-            goMainActivity();
-        }
+        setContentView(R.layout.activity_sign_up);
 
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
-        btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i(TAG, "onClick login button");
-                String username = etUsername.getText().toString();
-                String password = etPassword.getText().toString();
-                loginUser(username, password);
-            }
-        });
         btnSignUp = findViewById(R.id.btnSignUp);
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,23 +42,23 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void signUpUser(String username, String password) {
-        Intent i = new Intent(this, SignUpActivity.class);
-        startActivity(i);
-    }
+        Log.i(TAG, "Attempting to sign up user" + username);
+        ParseUser user = new ParseUser();
+        user.setUsername(username);
+        user.setPassword(password);
 
-    private void loginUser(String username, String password) {
-        Log.i(TAG, "Attempting to login user " + username);
-        ParseUser.logInInBackground(username, password, new LogInCallback() {
+        user.signUpInBackground(new SignUpCallback() {
             @Override
-            public void done(ParseUser user, ParseException e) {
+            public void done(ParseException e) {
                 if (e != null) {
-                    Log.e(TAG, "Issue with login", e);
-                    Toast.makeText(LoginActivity.this, "Issue with login!", Toast.LENGTH_SHORT).show();
+                    Log.e(TAG, "Issue with sign up", e);
+                    Toast.makeText(SignUpActivity.this, "Issue with sign up!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                // Navigate to main activity if user has logged in
-                goMainActivity();
-                Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+                // Navigate to main activity if user is signed up
+                Toast.makeText(SignUpActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+                finish();
+
             }
         });
     }

@@ -4,4 +4,16 @@
     <string name="icon">Icon</string>
     <string name="username">username</string>
     <string name="password">password</string>
+    <string name="description">Description</string>
+    <string name="user_image">User Image</string>
+    <string name="take_picture">take picture</string>
+    <string name="submit">submit</string>
+    <string name="sign_up">sign up</string>
+    <string name="email">email</string>
+    <string name="timeline">timeline</string>
+    <string name="new_post">new post</string>
+    <string name="user_profile">user profile</string>
+    <string name="log_out">Log Out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -32,13 +32,16 @@
         android:hint="@string/password"
         android:autofillHints="password"
         android:ems="10"
-         />
+        />
 
-    <Button
-        android:id="@+id/btnLogin"
+    <EditText
+        android:id="@+id/etEmail"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="@string/login"/>
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:autofillHints="email"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
 
     <Button
         android:id="@+id/btnSignUp"

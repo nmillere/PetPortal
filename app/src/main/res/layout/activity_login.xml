@@ -8,12 +8,11 @@
     tools:context=".activities.LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:src="@drawable/icon"
+        android:id="@+id/ivLogo"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
         android:contentDescription="@string/icon"
-        android:layout_gravity="center_horizontal"/>
+        tools:src="@drawable/landing_black" />
 
     <EditText
         android:id="@+id/etUsername"
@@ -38,12 +37,14 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="@string/login"/>
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/login" />
 
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="@string/sign_up"/>
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="@string/sign_up" />
 
 </LinearLayout>
